@@ -54,3 +54,27 @@
   # Solution:
             Navigate to VPC form search
             Navigate to Default VPC --> Navigate to Security groups --> Click create security group --> Provide the mentioned details in requirement --> click on create
+
+# Day 4: Enable Versioning for S3 Bucket
+  # Requirement:
+      Data protection and recovery are fundamental aspects of data management. It's essential to have systems in place to ensure that data can be recovered in case of accidental deletion or corruption. The DevOps team has received a requirement for implementing such measures for one of the S3 buckets they are managing.
+
+            The s3 bucket name is devops-s3-28498, enable versioning for this bucket.
+
+            Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+            Console URL	https://392284424672.signin.aws.amazon.com/console?region=us-east-1
+            Username	kk_labs_user_681355
+            Password	UZBtnwDB@7sq
+            Start Time	Tue Mar 24 17:05:47 UTC 2026
+            End Time	Tue Mar 24 18:05:47 UTC 2026
+
+            Notes:
+
+            Create the resources only in us-east-1 region.
+            To display or hide the terminal of the AWS client machine, you can use the expand toggle button as shown below:\n
+
+   # Solution:
+      Navigate to S3 --> Open the Bucket --> navigate to Properties --> Bucket Versioning --> Enable --> Save
+      More info about S3 -->
+      https://github.com/sampath-devops/aws-devops-zero-to-hero/blob/main/day-9/README.md
