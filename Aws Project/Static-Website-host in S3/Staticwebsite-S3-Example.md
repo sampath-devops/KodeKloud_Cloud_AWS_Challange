@@ -66,9 +66,9 @@ After saving, the "Static website hosting" section will display a Bucket website
 You can access your live static website using this endpoint.
 
 **Example Screenshots:**
-- Files uploaded in S3 bucket: ![Files in S3 bucket](image.png)
-- Index page: ![Index](image.png)
-- Project page: ![Project Page](image.png)
+- Files uploaded in S3 bucket: ![Files in S3 bucket](ObjectsinS3.png)
+- Index page: ![Index](Static_index.png)
+- Project page: ![Project Page](Project_page.png)
 
 ## Security Best Practices
 - **Principle of Least Privilege**: Limit bucket access to necessary permissions only.
