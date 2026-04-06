@@ -78,3 +78,40 @@
       Navigate to S3 --> Open the Bucket --> navigate to Properties --> Bucket Versioning --> Enable --> Save
       More info about S3 -->
       https://github.com/sampath-devops/aws-devops-zero-to-hero/blob/main/day-9/README.md
+
+# Day 5: Create GP3 Volume
+  # Requirement:
+    
+     The Nautilus DevOps team is strategizing the migration of a portion of their infrastructure to the AWS cloud. Recognizing the scale of this undertaking, they have opted to approach the migration in incremental steps rather than as a single massive transition. To achieve this, they have segmented large tasks into smaller, more manageable units. This granular approach enables the team to execute the migration in gradual phases, ensuring smoother implementation and minimizing disruption to ongoing operations. By breaking down the migration into smaller tasks, the Nautilus DevOps team can systematically progress through each stage, allowing for better control, risk mitigation, and optimization of resources throughout the migration process.
+
+      Create a volume with the following requirements:
+
+      Name of the volume should be xfusion-volume.
+
+      Volume type must be gp3.
+
+      Volume size must be 2 GiB.
+
+
+
+      Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+      Console URL	https://163665808200.signin.aws.amazon.com/console?region=us-east-1
+      Username	kk_labs_user_914954
+      Password	zBFYbgWy54jP
+      Start Time	Mon Apr 06 11:03:57 UTC 2026
+      End Time	Mon Apr 06 12:03:57 UTC 2026
+
+      Notes:
+
+      Create the resources only in us-east-1 region.
+
+      To display or hide the terminal of the AWS client machine, you can use the expand toggle button as shown below:
+      toggle button
+   # Solution:
+
+      1. Navigate to Volumes: In the Amazon EC2 Console, choose Volumes under the Elastic Block Store section in the left navigation pane.
+      2. Create Volume: Click the Create volume button.
+          Configure Settings:
+          Volume type: Select General Purpose SSD (gp3).
+          Size: Enter the desired size in GiB - 2GIB
