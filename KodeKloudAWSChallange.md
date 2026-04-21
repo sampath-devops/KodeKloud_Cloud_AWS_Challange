@@ -185,3 +185,34 @@
       3. Once instance stopped navigate to the Instance state options click on change the instance type and change the state to t2.nano
       4. Start the instance once instance is changed
 
+# Day 8: Enable Stop Protection for EC2 Instance
+  # Requirement:
+      As part of the migration, there were some components added to the AWS account. Team created one of the EC2 instances where they need to make some changes now.
+
+        There is an EC2 instance named datacenter-ec2 under us-east-1 region, enable the stop protection for this instance.
+
+
+
+        Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+        Console URL	https://538701479232.signin.aws.amazon.com/console?region=us-east-1
+        Username	kk_labs_user_450745
+        Password	Xt^WlW@Q0nGB
+        Start Time	Tue Apr 21 04:28:37 UTC 2026
+        End Time	Tue Apr 21 05:28:37 UTC 2026
+
+  # Solution:
+      1. Navigate to the EC2 instance 
+      2. Go to Actions --> Instance Settings --> Click on Change stop protection --> Click on Enable --> Save the changes
+      3. we can see the change stop protection setting will be changed to enable from disable state in instance details
+      4. Enabling stop protection on an EC2 instance prevents accidental shutdowns, ensuring high availability for stateful    workloads and preventing data loss           from ephemeral storage. It acts as a safety mechanism against unintentional stop or termination commands via the console, CLI, or API, enforcing a two-            step process to shut down critical production/staging servers. 
+       
+        Key Benefits of EC2 Stop Protection:
+            Prevent Accidental Downtime: Protects critical servers from accidental manual or scripted shutdowns.
+            Data Protection: Safeguards data in ephemeral instance store volumes that would otherwise be lost if the instance is stopped or terminated.
+            Support for Stateful Workloads: Ideal for applications that cannot handle sudden interruptions, ensuring they stay running until specifically intended             otherwise.
+            Operational Security: Adds a required step of disabling the protection first, reducing "fat-finger" errors, as highlighted in this LinkedIn post. 
+            Usage Examples & Synonyms:
+            Usage Examples: Protecting production database instances, ensuring high-availability database servers (e.g., MySQL, PostgreSQL) on EC2 do not go down              during maintenance windows.
+            Synonyms/Related Concepts: Instance stop prevention, unintended action safeguard, safety latch, resource safety belt.
+
