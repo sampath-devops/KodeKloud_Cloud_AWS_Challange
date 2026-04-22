@@ -216,3 +216,31 @@
             Usage Examples: Protecting production database instances, ensuring high-availability database servers (e.g., MySQL, PostgreSQL) on EC2 do not go down              during maintenance windows.
             Synonyms/Related Concepts: Instance stop prevention, unintended action safeguard, safety latch, resource safety belt.
 
+# Day 9: Enable Termination Protection for EC2 Instance
+  # Requirement:  
+      As part of the migration, there were some components created under the AWS account. The Nautilus DevOps team created one EC2 instance where they forgot to enable the termination protection which is needed for this instance.
+
+      An instance named nautilus-ec2 already exists in us-east-1 region. Enable termination protection for the same.
+
+
+
+      Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+      Console URL	https://621551581842.signin.aws.amazon.com/console?region=us-east-1
+      Username	kk_labs_user_895278
+      Password	2r6C^J6scaav
+      Start Time	Wed Apr 22 16:42:55 UTC 2026
+      End Time	Wed Apr 22 17:42:55 UTC 2026
+  # Solution:
+      1. Navigate to the EC2 instance 
+      2. Go to Actions --> Instance Settings --> Click on Change termination protection --> Click on Enable --> Save the changes
+      3. we can see the change termination protection setting will be changed to enable from disable state in instance details
+
+      Amazon EC2 termination protection is a safety feature that prevents accidental deletion of instances via the console, CLI, or API, acting as a safeguard for critical infrastructure. It ensures that instances cannot be terminated until the attribute is explicitly disabled, protecting against data loss and unintended service disruptions. 
+
+        Key Benefits of EC2 Termination Protection:
+        Prevents Accidental Termination: It provides a critical safety mechanism, preventing accidental clicks in the AWS Management Console or misguided scripts from terminating production instances.
+        Data Preservation: By stopping unintentional termination, it secures the data stored on attached Elastic Block Store (EBS) volumes, which are otherwise permanently deleted when an instance is terminated.
+        Reduces Unplanned Downtime: It enhances high availability by adding an extra step to the shutdown process, preventing service outages caused by human error or improper automation.
+        Secure Production Workloads: This is a vital practice for protecting important servers, separating production systems from non-critical or test environments.
+        Configurable Security: Termination protection can be enabled upon launch, or on running/stopped instances, offering flexible security settings
