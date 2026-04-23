@@ -244,3 +244,43 @@
         Reduces Unplanned Downtime: It enhances high availability by adding an extra step to the shutdown process, preventing service outages caused by human error or improper automation.
         Secure Production Workloads: This is a vital practice for protecting important servers, separating production systems from non-critical or test environments.
         Configurable Security: Termination protection can be enabled upon launch, or on running/stopped instances, offering flexible security settings
+
+
+# Day 10: Attach Elastic IP to EC2 Instance
+  # Requirement:
+    The Nautilus DevOps team has been creating a couple of services on AWS cloud. They have been breaking down the migration into smaller tasks, allowing for better control, risk mitigation, and optimization of resources throughout the migration process. Recently they came up with requirements mentioned below.
+
+      There is an instance named nautilus-ec2 and an elastic-ip named nautilus-ec2-eip in us-east-1 region. Attach the nautilus-ec2-eip elastic-ip to the nautilus-ec2 instance.
+
+
+
+      Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+      Console URL	https://471339402762.signin.aws.amazon.com/console?region=us-east-1
+      Username	kk_labs_user_928314
+      Password	KVd0cYp^ukIi
+      Start Time	Thu Apr 23 07:20:18 UTC 2026
+      End Time	Thu Apr 23 08:20:18 UTC 2026
+
+  # Solution:
+
+      Assigning an Elastic IP to an Amazon EC2 instance involves two primary phases: allocating a static IP address to your AWS account and then associating it with your specific instance. 
+     
+      Phase 1: Allocate a New Elastic IP 
+      Before you can attach an IP, you must reserve one from the AWS pool. 
+    
+      Sign in to the AWS Management Console.
+      In the left navigation pane of the Amazon EC2 Console, scroll down to Network & Security and select Elastic IPs.
+      Click the Allocate Elastic IP address button.
+      Choose Amazon's pool of IPv4 addresses (unless you are bringing your own IP range).
+      Click Allocate. You will see the new IP address listed in your dashboard. 
+    
+      Phase 2: Associate the IP with an EC2 Instance 
+      Once allocated, you must link the IP to your running instance. 
+      
+      In the Elastic IPs dashboard, select the checkbox next to the IP address you just created.
+      Click the Actions dropdown menu and select Associate Elastic IP address.
+      For Resource type, ensure Instance is selected.
+      In the Instance field, select your EC2 instance from the list.
+      (Optional) Select the specific Private IP address to associate with if your instance has multiple.
+      Click Associate. 
