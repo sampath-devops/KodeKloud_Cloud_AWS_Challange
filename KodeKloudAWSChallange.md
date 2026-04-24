@@ -244,3 +244,27 @@
         Reduces Unplanned Downtime: It enhances high availability by adding an extra step to the shutdown process, preventing service outages caused by human error or improper automation.
         Secure Production Workloads: This is a vital practice for protecting important servers, separating production systems from non-critical or test environments.
         Configurable Security: Termination protection can be enabled upon launch, or on running/stopped instances, offering flexible security settings
+
+# Day 11: Attach Elastic Network Interface to EC2 Instance
+  # Requirement:
+      The Nautilus DevOps team has been creating a couple of services on AWS cloud. They have been breaking down the migration into smaller tasks, allowing for better control, risk mitigation, and optimization of resources throughout the migration process. Recently they came up with requirements mentioned below.
+
+        An instance named nautilus-ec2 and an elastic network interface named nautilus-eni already exists in us-east-1 region.
+
+        Attach the nautilus-eni network interface to the nautilus-ec2 instance.
+        Make sure status is attached before submitting the task.
+        Please make sure instance initialisation has been completed before submitting this task.
+
+
+
+        Use below given AWS Credentials. (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+        Console URL	https://240365323441.signin.aws.amazon.com/console?region=us-east-1
+        Username	kk_labs_user_317994
+        Password	cwlXu98kgj@a
+        Start Time	Fri Apr 24 17:26:06 UTC 2026
+        End Time	Fri Apr 24 18:26:06 UTC 2026
+  # Solution:
+    1. Validate both Instance and Network interfaces are available or not
+    2. Navigate to Network interface --> Click on attach --> Select the VPC --> Select the Ec2 instance
+    3. Click on attach 
