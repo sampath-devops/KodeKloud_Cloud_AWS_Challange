@@ -307,3 +307,22 @@
     1. Validate both Instance and Network interfaces are available or not
     2. Navigate to Network interface --> Click on attach --> Select the VPC --> Select the Ec2 instance
     3. Click on attach 
+
+# Day 12: Attach Volume to EC2 Instance
+  # Requirement:
+      The Nautilus DevOps team has been creating a couple of services on AWS cloud. They have been breaking down the migration into smaller tasks, allowing for better control, risk mitigation, and optimization of resources throughout the migration process. Recently they came up with requirements mentioned below.
+
+        An instance named devops-ec2 and a volume named devops-volume already exists in us-east-1 region. Attach the devops-volume volume to the devops-ec2 instance, make sure to set the device name to /dev/sdb while attaching the volume.
+
+
+
+        Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+        Console URL	https://223308557377.signin.aws.amazon.com/console?region=us-east-1
+        Username	kk_labs_user_902690
+        Password	l7tMz!Weg%Z0
+        Start Time	Sat Apr 25 18:06:46 UTC 2026
+        End Time	Sat Apr 25 19:06:46 UTC 2026
+
+  # Solution:
+      1. Navigate to the Volumes --> Select the Volume named Devops-volume --> Go to Actions --> Select attach --> Select the Ec2 instance --> select the device name as specified --> Attach -- This will attach the volume to Ec2 instance and we can review it in EC2 instance under storage section
