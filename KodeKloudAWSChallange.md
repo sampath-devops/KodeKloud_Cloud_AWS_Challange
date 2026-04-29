@@ -326,3 +326,56 @@
 
   # Solution:
       1. Navigate to the Volumes --> Select the Volume named Devops-volume --> Go to Actions --> Select attach --> Select the Ec2 instance --> select the device name as specified --> Attach -- This will attach the volume to Ec2 instance and we can review it in EC2 instance under storage section
+
+
+# Day 13: Create AMI from EC2 Instance
+  # Requirement:
+    The Nautilus DevOps team is strategizing the migration of a portion of their infrastructure to the AWS cloud. Recognizing the scale of this undertaking, they have opted to approach the migration in incremental steps rather than as a single massive transition. To achieve this, they have segmented large tasks into smaller, more manageable units. This granular approach enables the team to execute the migration in gradual phases, ensuring smoother implementation and minimizing disruption to ongoing operations. By breaking down the migration into smaller tasks, the Nautilus DevOps team can systematically progress through each stage, allowing for better control, risk mitigation, and optimization of resources throughout the migration process.
+
+      For this task, create an AMI from an existing EC2 instance named xfusion-ec2 with the following requirement:
+
+      Name of the AMI should be xfusion-ec2-ami, make sure AMI is in available state.
+
+
+
+      Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+      Console URL	https://278810891986.signin.aws.amazon.com/console?region=us-east-1
+      Username	kk_labs_user_239659
+      Password	1^uelvEgEOSP
+      Start Time	Wed Apr 29 04:45:06 UTC 2026
+      End Time	Wed Apr 29 05:45:06 UTC 2026
+  # Solution:
+
+      Creating an Amazon Machine Image (AMI) from an existing EC2 instance can be done through the AWS Management Console, the Command Line Interface (CLI), or specific developer tools. 
+      Method 1: Using the AWS Management Console
+                This is the most common method for manual image creation. 
+                Stop the Instance (Recommended): While you can create an AMI from a running instance, it is highly recommended to stop it first to ensure data consistency across all volumes.
+                Select Instance: Log in to the AWS Management Console, navigate to EC2 > Instances, and select the instance you want to use.
+                Choose Create Image: Click the Actions button, then select Image and templates > Create image.
+                Configure Image:
+                Image name: Provide a unique name for your AMI.
+                Description: (Optional) Add details about the software or configuration included.
+                No reboot: By default, AWS reboots the instance during this process to ensure a clean state. Check "No reboot" only if you must keep the instance running, though this risks file system integrity.
+                Create Image: Click Create image at the bottom of the page.
+                Monitor Progress: Go to the AMIs section in the left navigation pane. The status will stay "pending" for several minutes until it becomes "available". 
+    
+      Method 2: Using the AWS CLI
+              You can create an AMI using the AWS CLI create-image command. 
+            
+              Basic Command:
+              bash
+              aws ec2 create-image --instance-id i-1234567890abcdef0 --name "MyServerImage" --description "AMI for web server"
+              Without Reboot: To skip the default reboot, add the --no-reboot flag:
+              bash
+              aws ec2 create-image --instance-id i-1234567890abcdef0 --name "MyServerImage" --no-reboot
+      
+      Method 3: Using Other Tools
+            AWS Toolkit for Visual Studio: Right-click an instance in the AWS Toolkit Explorer and select Create Image (EBS AMI).
+            AWS Tools for PowerShell: Use the New-EC2Image cmdlet to perform the same action from a Windows environment. 
+      
+      Important Considerations
+                Root Volume: The resulting AMI will include a snapshot of the root EBS volume and any other EBS volumes attached to the instance.
+                Billing: While creating an AMI is free, you will be charged for the EBS snapshot storage used by the image.
+                Region: AMIs are region-specific. If you need to use the image in a different region, you must first copy the AMI to that region. 
+  
