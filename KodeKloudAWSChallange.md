@@ -378,4 +378,25 @@
                 Root Volume: The resulting AMI will include a snapshot of the root EBS volume and any other EBS volumes attached to the instance.
                 Billing: While creating an AMI is free, you will be charged for the EBS snapshot storage used by the image.
                 Region: AMIs are region-specific. If you need to use the image in a different region, you must first copy the AMI to that region. 
+
+
+# Day 14: Terminate EC2 Instance
+  # Requirement:
+      During the migration process, several resources were created under the AWS account. Later on, some of these resources became obsolete as alternative solutions were implemented. Similarly, there is an instance that needs to be deleted as it is no longer in use.
+
+          1) Delete the ec2 instance named xfusion-ec2 present in us-east-1 region.
+
+          2) Before submitting your task, make sure instance is in terminated state.
+
+
+
+          Use below given AWS Credentials: (You can run the showcreds command on aws-client host to retrieve these credentials)
+
+          Console URL	https://422463611008.signin.aws.amazon.com/console?region=us-east-1
+          Username	kk_labs_user_589569
+          Password	SM0xq@M4!ZQ%
+          Start Time	Mon May 04 08:36:05 UTC 2026
+          End Time	Mon May 04 09:36:05 UTC 2026  
+  # Solution:
+      Navigate to the Instance --> Click on Instance State --> Terminate --> This will terminate the selected instance(Delete)
   
